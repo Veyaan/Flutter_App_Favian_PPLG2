@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'components/custom_button.dart';
-import 'components/custom_text.dart';
-import 'components/custom_textfield.dart';
+import '../components/custom_button.dart';
+import '../components/custom_text.dart';
+import '../components/custom_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,13 +18,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Login Page")),
+      appBar: AppBar(title: const Text("Login")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             CustomText(
-              text: "Welcome to application " + statusLogin,
+              text: "welcome " + statusLogin,
               fontSize: 22,
               color: const Color.fromARGB(255, 46, 9, 182),
               fontWeight: FontWeight.bold,
