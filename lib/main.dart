@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/calc_page.dart';
-import 'pages/login_page.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
-import 'pages/detail_makanan_page.dart';
-import 'pages/list_makanan.dart';
 
 void main() {
   runApp(const MyApp());
