@@ -10,10 +10,10 @@ class DetailMakananPage extends StatelessWidget {
     final controller = Get.put(DetailMakananController());
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 224, 197, 134),
+      backgroundColor: const Color(0xFFF3EBE0),
       appBar: AppBar(
         title: const Text("Detail Makanan"),
-        backgroundColor: const Color.fromARGB(255, 124, 15, 15),
+        backgroundColor: const Color(0xFFA93A3A),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -28,7 +28,7 @@ class DetailMakananPage extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 25, 152, 33),
+                color: Color(0xFF70712E),
               ),
             ),
 
@@ -39,7 +39,7 @@ class DetailMakananPage extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 248, 247, 247),
+                color: Color.fromARGB(255, 0, 0, 0),
               ),
             ),
 

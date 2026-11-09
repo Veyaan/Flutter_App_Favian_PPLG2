@@ -11,11 +11,11 @@ class ListMakananPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 224, 197, 134),
+      backgroundColor: const Color(0xFFA6927B),
       appBar: AppBar(
         title: const Text("List Makanan"),
-        backgroundColor: const Color.fromARGB(255, 124, 15, 15),
-        foregroundColor: Colors.white,
+        backgroundColor: const Color(0xFFA93A3A),
+        foregroundColor: Color(0xFFF3EBE0),
       ),
       body: Obx(
         () => ListView.builder(
@@ -38,7 +38,7 @@ class ListMakananPage extends StatelessWidget {
                 controller.dataMakanan.removeAt(index);
               },
               child: Card(
-                color: Colors.white,
+                color: Color(0xFFF3EBE0),
                 child: ListTile(
                   title: Text(
                     makanan.namaMakanan,
@@ -47,7 +47,7 @@ class ListMakananPage extends StatelessWidget {
                   subtitle: Text(
                     makanan.harga,
                     style: const TextStyle(
-                      color: Color.fromARGB(255, 25, 152, 33),
+                      color: Color(0xFF70712E),
                     ),
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios),

@@ -1,65 +1,58 @@
 import 'package:flutter/material.dart';
-import '../components/custom_button.dart';
-import '../components/custom_text.dart';
-import '../components/custom_textfield.dart';
+import 'package:get/get.dart';
+import 'package:flutter_application_1/components/custom_elevated_button.dart';
+import 'package:flutter_application_1/components/custom_textfield.dart';
+import 'package:flutter_application_1/components/custom_text.dart';
+import 'package:flutter_application_1/controllers/login_controller.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController txtUsername = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
-  String statusLogin = "";
+  final LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            CustomText(
-              text: "welcome " + statusLogin,
-              fontSize: 22,
-              color: const Color.fromARGB(255, 46, 9, 182),
-              fontWeight: FontWeight.bold,
-            ),
-            const SizedBox(height: 20),
+      appBar: AppBar(title: Text("Login page")),
+      body: Column(
+        children: [
+          CustomText(
+            text: "Welcome to application",
+            fontSize: 25,
+            color: const Color.fromARGB(255, 46, 9, 182),
+            fontWeight: FontWeight.bold,
+          ),
 
-            CustomTextField(
+          Container(
+            margin: EdgeInsets.all(10),
+            child: CustomTextField(
               hint: "input username",
-              txtController: txtUsername,
+              txtController: controller.txtUsername,
             ),
-            const SizedBox(height: 10),
+          ),
 
-            CustomTextField(
+          Container(
+            margin: EdgeInsets.all(10),
+            child: CustomTextField(
               hint: "input password",
-              txtController: txtPassword,
               isPassword: true,
+              txtController: controller.txtPassword,
             ),
-            const SizedBox(height: 20),
+          ),
 
-            CustomButton(
+          Obx(() {
+            return controller.isLoading.value
+                ? const CircularProgressIndicator()
+                : CustomElevatedbutton(
               text: "Login",
+              textColor: const Color.fromARGB(255, 30, 175, 44),
+              fontSize: 20,
               onPressed: () {
-                setState(() {
-                  String username = txtUsername.text;
-                  String password = txtPassword.text;
-                  if (username == "admin" && password == "admin") {
-                    statusLogin = "admin";
-                  } else {
-                    statusLogin = "failed";
-                  }
-                });
+                controller.login();
               },
-            ),
-          ],
-        ),
+            );
+          }),
+        ],
       ),
     );
   }
