@@ -4,12 +4,15 @@ class MakananModel {
   String rating;
   String deskripsi;
   String review;
+  String gambarPath;
 
   MakananModel({
     required this.namaMakanan,
     required this.harga,
     required this.rating,
     required this.deskripsi,
-    required this.review,});
+    required this.review,
+    required this.gambarPath,
+  });
 
 }

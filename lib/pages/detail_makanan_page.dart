@@ -34,6 +34,13 @@ class DetailMakananPage extends StatelessWidget {
 
             const SizedBox(height: 8),
 
+            Image.asset(
+              controller.makanan.gambarPath,
+              width: double.infinity,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+
             Text(
               "Harga: ${controller.makanan.harga}",
               style: const TextStyle(

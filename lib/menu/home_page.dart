@@ -59,6 +59,18 @@ class HomePage extends StatelessWidget {
                                 borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(12),
                                 ),
+                                child: Image.asset(
+                                  makanan.gambarPath,
+                                  height: 90,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      Container(
+                                        height: 90,
+                                        color: Colors.grey[300],
+                                        child: const Icon(Icons.fastfood),
+                                      ),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
