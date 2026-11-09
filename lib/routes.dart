@@ -27,5 +27,9 @@ class Routes {
       name: detail_makanan,
       page: () => DetailMakananPage(),
     ),
+    GetPage(
+      name: main_menu,
+      page: () => MainMenu(),
+    ),
   ];
 }
